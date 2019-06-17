@@ -25,8 +25,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
-import za.raretag.mawa.beans.*;
-import za.raretag.mawa.generic.*;
+import za.raretag.eyedee.beans.*;
+import za.raretag.eyedee.generic.*;
 
 /**
  *

@@ -23,12 +23,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.json.JSONException;
 import org.json.JSONObject;
-import za.raretag.mawa.generic.Cashup;
-import za.raretag.mawa.beans.CashupBeanLocal;
-import za.raretag.mawa.generic.CheckingQuery;
-import za.raretag.mawa.generic.Conversion;
-import za.raretag.mawa.generic.Deposit;
-import za.raretag.mawa.generic.Response;
+import za.raretag.eyedee.generic.Cashup;
+import za.raretag.eyedee.beans.CashupBeanLocal;
+import za.raretag.eyedee.generic.CheckingQuery;
+import za.raretag.eyedee.generic.Conversion;
+import za.raretag.eyedee.generic.Deposit;
+import za.raretag.eyedee.generic.Response;
 
 /**
  *

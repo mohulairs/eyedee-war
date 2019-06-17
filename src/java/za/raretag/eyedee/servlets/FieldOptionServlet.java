@@ -19,11 +19,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import za.raretag.mawa.beans.FieldOptionBeanLocal;
-import za.raretag.mawa.generic.Data;
-import za.raretag.mawa.generic.FieldOption;
-import za.raretag.mawa.generic.MessageContainer;
-import za.raretag.mawa.generic.Response;
+import za.raretag.eyedee.beans.FieldOptionBeanLocal;
+import za.raretag.eyedee.generic.Data;
+import za.raretag.eyedee.generic.FieldOption;
+import za.raretag.eyedee.generic.MessageContainer;
+import za.raretag.eyedee.generic.Response;
 
 /**
  *

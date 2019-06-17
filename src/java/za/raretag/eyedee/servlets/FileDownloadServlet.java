@@ -16,10 +16,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import za.raretag.mawa.beans.TransactionBeanLocal;
-import za.raretag.mawa.generic.Data;
-import za.raretag.mawa.generic.Order;
-import za.raretag.mawa.generic.Response;
+import za.raretag.eyedee.beans.TransactionBeanLocal;
+import za.raretag.eyedee.generic.Data;
+import za.raretag.eyedee.generic.Order;
+import za.raretag.eyedee.generic.Response;
 
 /**
  *

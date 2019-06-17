@@ -17,14 +17,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import za.raretag.mawa.beans.TransactionBeanLocal;
-import za.raretag.mawa.generic.Data;
-import za.raretag.mawa.generic.Dependent;
-import za.raretag.mawa.generic.Identity;
-import za.raretag.mawa.generic.MessageContainer;
-import za.raretag.mawa.generic.Policy;
-import za.raretag.mawa.generic.Request;
-import za.raretag.mawa.generic.Response;
+import za.raretag.eyedee.beans.TransactionBeanLocal;
+import za.raretag.eyedee.generic.Data;
+import za.raretag.eyedee.generic.Dependent;
+import za.raretag.eyedee.generic.Identity;
+import za.raretag.eyedee.generic.MessageContainer;
+import za.raretag.eyedee.generic.Policy;
+import za.raretag.eyedee.generic.Request;
+import za.raretag.eyedee.generic.Response;
 
 /**
  *

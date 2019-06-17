@@ -17,19 +17,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-//import za.raretag.mawa.generic.PartnerQuery;
-import za.raretag.mawa.beans.FieldOptionBeanLocal;
-import za.raretag.mawa.beans.PartnerBeanLocal;
-import za.raretag.mawa.entities.Partner;
-import za.raretag.mawa.generic.Contact;
-import za.raretag.mawa.generic.Conversion;
-import za.raretag.mawa.generic.Data;
-import za.raretag.mawa.generic.Employee;
-import za.raretag.mawa.generic.Identity;
-import za.raretag.mawa.generic.MessageContainer;
-import za.raretag.mawa.generic.PartnerQuery;
-import za.raretag.mawa.generic.Person;
-import za.raretag.mawa.generic.Response;
+//import za.raretag.eyedee.generic.PartnerQuery;
+import za.raretag.eyedee.beans.FieldOptionBeanLocal;
+import za.raretag.eyedee.beans.PartnerBeanLocal;
+import za.raretag.eyedee.entities.Partner;
+import za.raretag.eyedee.generic.Contact;
+import za.raretag.eyedee.generic.Conversion;
+import za.raretag.eyedee.generic.Data;
+import za.raretag.eyedee.generic.Employee;
+import za.raretag.eyedee.generic.Identity;
+import za.raretag.eyedee.generic.MessageContainer;
+import za.raretag.eyedee.generic.PartnerQuery;
+import za.raretag.eyedee.generic.Person;
+import za.raretag.eyedee.generic.Response;
 
 /**
  *

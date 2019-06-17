@@ -5,7 +5,7 @@
  */
 package za.raretag.eyedee.servlets;
 
-//import za.raretag.mawa.entities.User;
+//import za.raretag.eyedee.entities.User;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,12 +17,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import za.raretag.mawa.beans.UserBeanLocal;
-import za.raretag.mawa.entities.*;
-import za.raretag.mawa.generic.Data;
-import za.raretag.mawa.generic.MessageContainer;
-import za.raretag.mawa.generic.Response;
-import za.raretag.mawa.generic.User;
+import za.raretag.eyedee.beans.UserBeanLocal;
+import za.raretag.eyedee.entities.*;
+import za.raretag.eyedee.generic.Data;
+import za.raretag.eyedee.generic.MessageContainer;
+import za.raretag.eyedee.generic.Response;
+import za.raretag.eyedee.generic.User;
 
 /**
  *

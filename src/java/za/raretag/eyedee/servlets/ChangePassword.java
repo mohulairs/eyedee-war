@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import za.raretag.mawa.beans.UserBeanLocal;
-import za.raretag.mawa.generic.Response;
+import za.raretag.eyedee.beans.UserBeanLocal;
+import za.raretag.eyedee.generic.Response;
 
 /**
  *

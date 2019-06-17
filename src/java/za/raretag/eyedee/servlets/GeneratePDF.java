@@ -45,17 +45,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transaction;
-import za.raretag.mawa.beans.TransactionBeanLocal;
-import za.raretag.mawa.generic.BankAccount;
-import za.raretag.mawa.generic.Conversion;
-import za.raretag.mawa.generic.Data;
-import za.raretag.mawa.generic.Order;
-import za.raretag.mawa.generic.OrderArea;
-import za.raretag.mawa.generic.OrderDate;
-import za.raretag.mawa.generic.OrderItem;
-import za.raretag.mawa.generic.OrderPartner;
-import za.raretag.mawa.generic.ReferenceDocument;
-import za.raretag.mawa.generic.Response;
+import za.raretag.eyedee.beans.TransactionBeanLocal;
+import za.raretag.eyedee.generic.BankAccount;
+import za.raretag.eyedee.generic.Conversion;
+import za.raretag.eyedee.generic.Data;
+import za.raretag.eyedee.generic.Order;
+import za.raretag.eyedee.generic.OrderArea;
+import za.raretag.eyedee.generic.OrderDate;
+import za.raretag.eyedee.generic.OrderItem;
+import za.raretag.eyedee.generic.OrderPartner;
+import za.raretag.eyedee.generic.ReferenceDocument;
+import za.raretag.eyedee.generic.Response;
 
 /**
  *
