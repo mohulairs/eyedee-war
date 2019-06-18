@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>New Policy</title>
+        <script>
+            if (sessionStorage.authenticated === false || sessionStorage.authenticated === undefined) {
+                window.location = "../login.html";
+            }
+        </script>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="../images/eyedeeLogo.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/jquery.idle.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+        <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>        
+        <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+        <script src="http://malsup.github.io/jquery.blockUI.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js"></script>-->
+        <script type="text/javascript" src="../js/jquery.noty.packaged.min.js"></script>
+        <script src="../js/jquery.maskMoney.js"></script>
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/script.js"></script>        
+        <script src="../js/policy.js"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="#">eyedee</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav" id="myNavBarList">
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" onclick="eyedee.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" style="height:auto">
+            <form id="policyForm" class="form-horizontal">               
+                <div class="page-header">
+                    <h3>Policy <small>New</small></h3>
+                </div>
+               
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="customer">Customer</label>
+                    <div class="col-sm-10"> 
+                        <input type="text" class="form-control" id="customer" name="customer" readonly/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="employeeResponsible">Sales Representative</label>
+                    <div class="col-sm-10"> 
+                        <select class="form-control selectpicker" data-live-search="true" id="employeeResponsible" name="employeeResponsible" required>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="salesArea">Sales Area</label>
+                    <div class="col-sm-10"> 
+                        <select class="form-control selectpicker" data-live-search="true" id="salesArea" name="salesArea" required>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="productCode">Funeral Plan</label>
+                    <div class="col-sm-10"> 
+                        <select class="form-control selectpicker" data-live-search="true" id="productCode" name="productCode" required>
+                            <option></option>
+                        </select>
+                        <input type="text" id="paymentAmount" name="paymentAmount" hidden="hidden" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="receiptDate">Receipt Date</label>
+                    <div class="col-sm-10"> 
+                        <input type="date" class="form-control" id="receiptDate" name="receiptDate" required/>                       
+                    </div>
+                </div>
+                    <div class="form-group">
+                    <label class="control-label col-sm-2" for="paymentPeriod">Payment Period</label>
+                    <div class="col-sm-10"> 
+                        <select class="form-control selectpicker" data-live-search="true" id="paymentPeriod" name="paymentPeriod" required>
+                            <option></option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="receiptNumber">Receipt Number</label>
+                    <div class="col-sm-10"> 
+                        <input type="text" class="form-control" id="receiptNumber" name="receiptNumber" required/>
+
+                    </div>
+                </div>
+            
+                <button type="button" class="btn btn-primary" onclick="policy.save('create')">Save</button>            
+                <a onclick="policy.cancel()" class="btn btn-danger" >Cancel</a>
+            </form>
+        </div>
+    </body>
+</html>

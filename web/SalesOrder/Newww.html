@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>New Sales Order</title>
+        <script>
+            if (sessionStorage.authenticated === false || sessionStorage.authenticated === undefined) {
+                window.location = "../login.html";
+            }
+        </script>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="../images/eyedeeLogo.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+        <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>        
+        <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+        <script src="http://malsup.github.io/jquery.blockUI.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js"></script>-->
+        <script type="text/javascript" src="../js/jquery.noty.packaged.min.js"></script>
+        <script src="../js/jquery.maskMoney.js"></script>
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/script.js"></script>        
+        <script src="../js/order.js"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="200">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="#">eyedee</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="../FuneralPolicy/Search.html">Policy</a>                       
+                        </li>
+                        <li>
+                            <a href="../Cashup/Search.html">Cashup</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" onclick="eyedee.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" style="height:auto">
+            <form id="policyForm" class="form-inline">               
+                <div class="page-header">
+                    <h3>Sales Order <small>New</small></h3>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="orderDate">Order Date</label>  
+                    </div>
+                    <input type="date" class="form-control" id="orderDate" name="orderDate" required/>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="orderType">Order Type</label>  
+                    </div>
+                    <select class="form-control selectpicker" data-live-search="true" id="orderType" name="orderType">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="customer">Customer</label>  
+                    </div>
+                    <select class="form-control selectpicker" data-live-search="true" id="customer" name="customer">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="salesArea">Sales Area</label>   
+                    </div>
+                    <select class="form-control selectpicker" data-live-search="true" id="salesArea" name="salesArea">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="employeeResponsible">Sales Representative</label>  
+                    </div>
+                    <select class="form-control selectpicker" data-live-search="true" id="employeeResponsible" name="employeeResponsible">
+                        <option></option>
+                    </select>
+                </div>
+
+                <br>
+                <ul class="nav nav-tabs responsive" id="myTab" role="tablist" style="width: 90%">
+                    <li class="active"><a href="#overview" role="tab" data-toggle="tab">Items</a></li>
+                    <li><a href="#dependants" role="tab" data-toggle="tab">Dependants</a></li>
+                    <li><a href="#payment-history" role="tab" data-toggle="tab">Payment History</a></li>
+                    <li><a href="#claim-history" role="tab" data-toggle="tab">Claims</a></li>
+                </ul>
+                <div role="tabpanel" class="tab-pane" id="payment-history">
+                    <br>
+                    <div class="form-group" style="position:relative;left:20px;">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">What would you like to do?
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a onclick="policy.payment()">Add New</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="itemList" class="table table-striped" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Policy No</th>
+                                    <th>Full Name</th>
+                                    <th>Funeral Plan</th>  
+                                    <th>Status</th> 
+                                    <th>Actions</th> 
+                                </tr>               
+                            </thead>
+                            <tbody>                    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -6,11 +6,46 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>eyedee</title>
+
         <meta charset="UTF-8">
+      <link rel="shortcut icon" href="./images/eyedeeLogo.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="./js/jquery.idle.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+        <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>        
+        <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+        <script src="http://malsup.github.io/jquery.blockUI.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js"></script>-->
+        <script type="text/javascript" src="./js/jquery.noty.packaged.min.js"></script>
+        <script src="./js/jquery.maskMoney.js"></script>
+        <script src="./js/jquery.dataTables.min.js"></script>
+        <script src="./js/script.js"></script> 
+        <script>
+            if (sessionStorage.authenticated === "false" || sessionStorage.authenticated === false || sessionStorage.authenticated === undefined) {
+                window.location = "./login.html";
+            } else {
+                sessionStorage.action = null;
+                sessionStorage.workcenter = "Dashboard";
+                // window.location.href = "./Customer/Search.html";
+            }
+            eyedee.buildHomeNavbar();
+        </script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="sidebar" id="sidebar">
+            
+        </div>
+
+        <div class="content">
+            
+        </div>
     </body>
 </html>

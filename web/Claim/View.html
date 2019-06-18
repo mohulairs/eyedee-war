@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>View Claim</title>
+        <script>
+            if (sessionStorage.authenticated === false || sessionStorage.authenticated === undefined) {
+                window.location = "../login.html";
+            }
+        </script>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="../images/eyedeeLogo.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+        <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>        
+        <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+        <script src="http://malsup.github.io/jquery.blockUI.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+        <script src="../js/responsive-tabs.js"></script>
+        <script type="text/javascript" src="../js/jquery.noty.packaged.min.js"></script>
+        <script src="../js/jquery.maskMoney.js"></script>
+        <script src="../js/jquery.dataTables.min.js"></script>
+        <script src="../js/script.js"></script>        
+        <script src="../js/claim.js"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="#">eyedee</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                      <ul class="nav navbar-nav" id="myNavBarList">                       
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" onclick="eyedee.logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" style="height:auto">
+            <form id="policyForm" class="form-horizontal">               
+                <div class="page-header">
+                    <h3>Claim <small>View</small><button class='btn btn-danger pull-right'>Close</button></h3>                    
+                </div>
+             
+                <ul class="nav nav-tabs responsive" id="myTab" role="tablist" style="width: 90%">
+                    <li class="active"><a href="#overview" role="tab" data-toggle="tab">Overview</a></li>
+                    <li><a href="#dependants" role="tab" data-toggle="tab">Dependants</a></li>
+                    <li><a href="#payment-history" role="tab" data-toggle="tab">Payment History</a></li>
+                    <li><a href="#claim-history" role="tab" data-toggle="tab">Claims</a></li>
+                </ul>
+
+                <div class="tab-content responsive">
+                    <div role="tabpanel" class="tab-pane active" id="overview">
+                        <br>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="claimNo">Claim No</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control" id="claimNo" name="claimNo" readonly/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="customer">Main Member</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control" id="customer" name="customer" readonly/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="salesRepresentative">Sales Representative</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control" id="salesRepresentative" name="salesRepresentative" readonly/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="salesArea">Submission Office</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control" id="salesArea" name="salesArea" readonly/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="product">Funeral Plan</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control" id="product" name="product" readonly size="30"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="monthlyPremium">Monthly Premium</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control" id="monthlyPremium" name="monthlyPremium" readonly/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="dateJoined">Date Joined</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control" id="dateJoined" name="dateJoined" readonly/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="dateEffective">Date Effective</label>
+                            <div class="col-sm-10"> 
+                                <input type="text" class="form-control" id="dateEffective" name="dateEffective" readonly/>
+                            </div>
+                        </div>
+                      
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="items">
+                        <br>
+                        <div class="form-group" style="position:relative;left:20px;">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">What would you like to do?
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a onclick="policy.dependent()">Add New</a></li>
+                                    <!--<li><a href="../Dependant/Replace.html">Replace</a></li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="itemList" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Item No</th>
+                                        <th>Item Description</th>                                       
+                                    </tr>               
+                                </thead>
+                                <tbody>                    
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="payment-history">
+                        <br>
+                        <div class="form-group" style="position:relative;left:20px;">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">What would you like to do?
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a onclick="policy.payment()">Add New</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="partnerList" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Partner No</th>
+                                        <th>Partner Type</th>
+                                        <th>ID Number</th>
+                                        <th>Full Name</th>                                        
+                                    </tr>               
+                                </thead>
+                                <tbody>                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="claim-history">
+                        <br>
+                        <div class="form-group" style="position:relative;left:20px;">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">What would you like to do?
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a onclick="policy.claim()">New</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="areaList" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Area Type</th>
+                                        <th>Area ID</th>
+                                        <th>Area Name</th>                                        
+                                    </tr>               
+                                </thead>
+                                <tbody>                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                     <div role="tabpanel" class="tab-pane" id="reference-documents">
+                        <br>
+                        <div class="form-group" style="position:relative;left:20px;">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">What would you like to do?
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a onclick="policy.claim()">New</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="referenceDocumentList" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Document Type</th>
+                                        <th>Document ID</th>                                     
+                                    </tr>               
+                                </thead>
+                                <tbody>                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    (function ($) {
+                        fakewaffle.responsiveTabs(['xs', 'sm']);
+                    })(jQuery);
+                </script>
+
+            </form>
+        </div>
+    </body>
+</html>

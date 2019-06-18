@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>eyedee</title>
+        <script>
+            if (sessionStorage.authenticated === false || sessionStorage.authenticated === undefined) {
+                window.location = "./login.html";
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/menu.css">
+        <link rel="shortcut icon" href="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0", charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://www.w3schools.com/lib/w3data.js"></script>
+        <script src="../js/menu.js"></script>
+    </head>
+    <body>
+        <ul>
+            <li class="active">
+                <a href="#" onclick="eyedee.navigate('Customer', 'Search')">Customer</a>                       
+            </li>
+            <li>
+                <a href="#" onclick="eyedee.navigate('Pickup', 'Search')">Pickup</a>                       
+            </li>
+            <li>
+                <a href="#" onclick="eyedee.navigate('CashRequest', 'Search')">Cash Request</a>                       
+            </li>
+            <li>
+                <a href="#" onclick="eyedee.navigate('Cashup', 'Search')">Cashup</a>
+            </li>
+        </ul>        
+      
+        <script>
+            w3IncludeHTML();
+        </script>
+    </body>
+</html>
